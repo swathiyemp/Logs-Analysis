@@ -33,14 +33,12 @@ This project is for building a reporting tool that prints out reports that are p
 - Then type psql  –d news  –f newsdata.sql  to load data into the database.
 - Then type psql –d news and press Enter then type the below sql query to create view tot1.
 
-```create view tot1 as select time::date, count(status) as tot_logs from log group by time::date order by tot_logs desc;
-```
+create view tot1 as select time::date, count(status) as tot_logs from log group by time::date order by tot_logs desc;
 
 - It creates the view required for the project. Also type the below sql to create the
 following view.
 
-```create view tot2 as select time::date, count(status) as tot_errs from log where status like '404%' group by time::date order by tot_errs desc;
-```
+create view tot2 as select time::date, count(status) as tot_errs from log where status like '404%' group by time::date order by tot_errs desc;
 
 - The views will be created for the project to work.
 
